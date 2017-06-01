@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">Universal Table Editor</string>
+    <string name="editing_templates">Sample</string>
+    <string name="editing_tables">Tables</string>
+    <string name="export_table">Export table</string>
+    <string name="export_import_sample">Enter key</string>
+    <string name="banner_ad_unit_id2" translatable="false">2342432424234</string>
+    <string name="dialog_sample_add">Dialog sample add</string>
+    <string name="dialog_table_add">Dialog table add</string>
+
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_removing_message_sample">Are you sure want to delete this sample?</string>
+    <string name="dialog_removing_message_table">Are you sure want to delete this table?</string>
+    <string name="select_action">Select action</string>
+    <string name="dialog_editing_sample">Edit sample</string>
+    <string name="duplicate_sample">Duplicate sample</string>
+    <string name="dialog_deleting_sample">Delete sample</string>
+    <string name="dialog_editing_table">Edit table</string>
+    <string name="duplicate_table">Duplicate table</string>
+    <string name="dialog_deleting_table">Delete table</string>
+    <string name="dialog_editing_column">Edit column</string>
+    <string name="duplicate_column">Duplicate column</string>
+    <string name="dialog_deleting_column">Delete column</string>
+    <string name="num_cell">Number of columns</string>
+    <string name="name_sample">Sample name</string>
+    <string name="name_table">Table name</string>
+    <string name="dialog_error_empty_name_sample">Error: empty sample name</string>
+    <string name="dialog_error_empty_name_table">Error: empty table name</string>
+    <string name="dialog_error_empty_name_column">Error: empty column name</string>
+    <string name="dialog_error_empty_num">Error: empty number of columns</string>
+    <string name="sample_adding_cancel">Sample adding cancel</string>
+    <string name="table_adding_cancel">Table adding cancel</string>
+    <string name="cell_adding_cancel">Data adding cancel</string>
+    <string name="column_adding_cancel">Column adding cancel</string>
+    <string name="dialog_removing_message_column">Are you sure want to delete this column?</string>
+    <string name="dialog_column_add">Dialog column add</string>
+    <string name="name_column">Column name</string>
+    <string name="height">Height of cell</string>
+    <string name="width">Width of cell</string>
+
+    <string name="type_data_1">Text</string>
+    <string name="type_data_2" translatable="false">Integer</string>
+    <string name="type_data_3" translatable="false">Floating point number</string>
+    <string name="type_data_4">Date</string>
+    <string name="type_data_5">Time</string>
+
+    <string name="type_input_1">Enter manually</string>
+    <string name="type_input_2">List. Select one</string>
+    <string name="type_input_3">List. Select multiple</string>
+    <string name="column_num">Column Number</string>
+    <string name="data_type">Data type</string>
+    <string name="input_type">Type of input</string>
+    <string name="list_of_sample">Select a sample</string>
+    <string name="dialog_cell_add">Add data</string>
+    <string name="add_options">Add options</string>
+    <string name="data_adding_cancel">Data adding cancel</string>
+    <string name="dialog_sample_edit">Editing sample</string>
+    <string name="dialog_table_edit">Editing table</string>
+    <string name="dialog_column_edit">Editing column</string>
+    <string name="dialog_cell_edit">Editing cell</string>
+    <string name="dialog_editing_data">Edit</string>
+    <string name="copy_data">Copy</string>
+    <string name="dialog_deleting_data">Delete entire line</string>
+    <string name="dialog_removing_message_data">Are you sure want to delete entire line data?</string>
+    <string name="clear_data">Clear entire line</string>
+    <string name="removed">Data was removed</string>
+    <string name="past_data">Paste</string>
+    <string name="warning">Warning</string>
+    <string name="cant_delete1">Removal and editing is not possible until the sample is used by the table</string>
+    <string name="insert_sd_card">Can\'t create folder. Please insert the SD card</string>
+    <string name="file_not_found">File not found</string>
+    <string name="file_write_failed">File write failed</string>
+    <string name="export_filed">Export filed</string>
+    <string name="success_export">Success export in folder UniversalTE</string>
+    <string name="dialog_cell_info">Cell info</string>
+    <string name="denied_storage">Storage Permissions denied.</string>
+    <string name="storage_isnt_granted">Storage permission isn\'t granted</string>
+    <string name="grant_permiss">Open Permissions and grant the Storage permission</string>
+    <string name="settings">SETTINGS</string>
+    <string name="show_files_count" translatable="false">Storage permission is needed to show files count</string>
+    <string name="grant">GRANT</string>
+    <string name="data_past_impossible">Can not insert data. Type of input - the list</string>
+    <string name="data_removing_cancel">Removing cancel</string>
+    <string name="cant_open">There are no sample. Please, create a sample</string>
+    <string name="cant_open1">There are no table. Please, create a table</string>
+    <string name="dialog_enter_key">Enter key</string>
+    <string name="key_expired">Key expired</string>
+    <string name="invalid_key">Invalid key</string>
+    <string name="success_key">Success</string>
+
+</resources>

@@ -1,0 +1,150 @@
+package com.wizardmb.witerius.universaltableeditor.dialog;
+
+/**
+ * Created by User on 29.03.2016.
+ */
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
+import android.support.v4.app.DialogFragment;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import com.wizardmb.witerius.universaltableeditor.R;
+import com.wizardmb.witerius.universaltableeditor.model.ModelSample;
+
+import static com.wizardmb.witerius.universaltableeditor.MainActivity.nowOpenSample;
+
+
+public final class EditSampleDialogFragment extends DialogFragment {
+
+    private EditingSampleListener editingSampleListener;
+
+    public static EditSampleDialogFragment newInstance(ModelSample modelSample) {
+        EditSampleDialogFragment editDialogFragment = new EditSampleDialogFragment();
+        Bundle args = new Bundle();
+        args.putLong("timeStamp", modelSample.getTimeStamp());
+        args.putString("nameTable", modelSample.getNameTable());
+
+        editDialogFragment.setArguments(args);
+        return editDialogFragment;
+    }
+
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        try {
+            editingSampleListener = (EditingSampleListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement EditingSampleListener");
+        }
+
+    }
+
+
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+        Bundle args = getArguments();
+        long timeStamp = args.getLong("timeStamp");
+        String nameTable = args.getString("nameTable");
+
+        final ModelSample modelSample = new ModelSample(timeStamp, nameTable);
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+        builder.setTitle(R.string.dialog_sample_edit);
+
+        final LayoutInflater inflater = getActivity().getLayoutInflater();
+
+        View container = inflater.inflate(R.layout.dialog_task_add_sample, null);
+
+        final TextInputLayout tilName = (TextInputLayout) container.findViewById(R.id.tilDialogSampleName);
+        final EditText etName  = tilName.getEditText();
+
+        tilName.setHint(getResources().getString(R.string.name_sample));
+
+        try {
+            etName.setText(nameTable);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        builder.setView(container);
+
+        builder.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                try {
+                    modelSample.setNameTable(etName.getText().toString());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                nowOpenSample = modelSample.getTimeStamp();
+
+                editingSampleListener.onSampleEdited(modelSample);
+
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.cancel();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface dialog) {
+                final Button positiveButton = ((AlertDialog) dialog).getButton(DialogInterface.BUTTON_POSITIVE);
+                if (etName.length() == 0) {
+                    positiveButton.setEnabled(false);
+                    tilName.setError(getResources().getString(R.string.dialog_error_empty_name_sample));
+                }
+
+                etName.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                        if (s.length() == 0) {
+                            positiveButton.setEnabled(false);
+                            tilName.setError(getResources().getString(R.string.dialog_error_empty_name_sample));
+                        } else {
+                            positiveButton.setEnabled(true);
+                            tilName.setErrorEnabled(false);
+                        }
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+
+                    }
+                });
+
+            }
+        });
+        return alertDialog;
+    }
+
+
+
+}

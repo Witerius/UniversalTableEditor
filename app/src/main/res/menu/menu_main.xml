@@ -1,0 +1,52 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_back"
+        android:orderInCategory="100"
+        android:title="Back"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_stat_hardware_keyboard_arrow_left"
+        />
+    <item
+        android:id="@+id/action_next"
+        android:orderInCategory="100"
+        android:title="Next"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_stat_hardware_keyboard_arrow_right"
+        />
+
+    <item
+        android:id="@+id/action_all_data"
+        android:orderInCategory="100"
+        android:title="Table"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_apartment"
+        android:orderInCategory="100"
+        android:title="Apartment"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_rating"
+        android:orderInCategory="100"
+        android:title="Rate app"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/action_help"
+        android:orderInCategory="100"
+        android:title="Guide"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/action_video"
+        android:orderInCategory="100"
+        android:title="Video guide"
+        app:showAsAction="never"
+        />
+</menu>
